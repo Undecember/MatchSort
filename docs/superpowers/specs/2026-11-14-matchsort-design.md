@@ -1,7 +1,7 @@
 # MatchSort design
 
 Date: 2026-11-14
-Status: Layout approved; written design awaiting approval.
+Status: Approved by the user on 2026-11-14.
 
 ## Intent
 
@@ -102,4 +102,4 @@ The remote preview uses port 8084, bound to 0.0.0.0 and reached through the user
 
 ## Approval
 
-The visual layout and selected algorithm are approved. This written document consolidates that direction and explicitly identifies proposed defaults. Approval of this document is the remaining design step before an implementation plan is prepared.
+The user approved the visual layout, selected algorithm, and this written document on 2026-11-14. Proceed to implementation planning using the defaults documented here.
