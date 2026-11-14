@@ -21,6 +21,19 @@ npm run build     # typecheck and production bundle in dist/
 
 Deploy the contents of `dist/` to a static host. The app needs no backend or accounts.
 
+## GitHub Pages
+
+The public site is **https://undecember.github.io/MatchSort/**. The workflow in `.github/workflows/deploy.yml` tests, builds, and deploys changes pushed to `main`; it can also be started manually from GitHub Actions. Repository Settings → Pages must use **GitHub Actions** as the source.
+
+The Pages build sets `GITHUB_PAGES=true` to use the `/MatchSort/` asset prefix. Ordinary local development and builds keep `/` as the base path. To check the Pages build locally:
+
+```sh
+GITHUB_PAGES=true npm run build
+GITHUB_PAGES=true npx vite preview
+```
+
+Then open `http://localhost:8084/MatchSort/` (stop the development server first). Localhost saves are separate from saves on the public site because browser storage belongs to each origin.
+
 ## How it works
 
 - Add plain text items with the input and Add button, or press Enter. Remove items before starting. Blank and exact duplicate labels are rejected after trimming; labels are case sensitive.
