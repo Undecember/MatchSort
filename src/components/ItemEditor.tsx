@@ -1,4 +1,4 @@
-import { useRef, useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import type { Item } from '../ranking/types';
 
 type Props = { items: Item[]; error: string | null; onAdd: (label: string) => void; onRemove: (id: string) => void; onStart: () => void };
@@ -6,6 +6,7 @@ type Props = { items: Item[]; error: string | null; onAdd: (label: string) => vo
 export function ItemEditor({ items, error, onAdd, onRemove, onStart }: Props) {
   const [value, setValue] = useState('');
   const input = useRef<HTMLInputElement>(null);
+  useEffect(() => { input.current?.focus(); }, []);
   const submit = (event: FormEvent) => {
     event.preventDefault(); onAdd(value);
     if (value.trim() && !items.some(item => item.label === value.trim())) setValue('');

@@ -72,6 +72,7 @@ it('confirms restart, returns focus on cancel, and retains the editable list', a
   await user.click(restart);
   await user.click(screen.getByRole('button', { name: 'Start over and edit list' }));
   expect(itemInput()).toBeInTheDocument();
+  expect(itemInput()).toHaveFocus();
   expect(screen.getByText('A', { selector: '.item-name' })).toBeInTheDocument();
 });
 

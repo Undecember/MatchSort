@@ -6,3 +6,7 @@ test-results/
 *.tsbuildinfo
 .env*
 !.env.example
+graphify-out/cache/
+graphify-out/.graphify_root
+graphify-out/.graphify_build_state.json
+graphify-out/.graphify_labels.pending.json
